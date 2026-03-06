@@ -1,9 +1,11 @@
+/**
+ * @file api.error.js
+ * @description Maps OKX API error codes to Zenfuse error codes. @see https://www.okx.com/docs-v5/en/#error-code
+ */
 const ExchangeBaseException = require('../../../base/errors/exchange.error');
 const utils = require('../../../base/utils/utils');
 
-/**
- * @see https://www.okx.com/docs-v5/en/#error-code
- */
+/** OKX API error; maps response codes to zenfuse error codes and attaches original response. */
 class OkxApiException extends ExchangeBaseException {
     static codesMap = new Map([
         ['50111', 'INVALID_CREDENTIALS'],

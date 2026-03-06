@@ -1,3 +1,7 @@
+/**
+ * @file spot.js
+ * @description Huobi spot wallet: markets, tickers, candles, orders, balances, account id, and streams.
+ */
 const mergeObjects = require('deepmerge');
 
 const utils = require('../../../base/utils/utils');
@@ -12,9 +16,7 @@ const ZenfuseUserError = require('../../../base/errors/user.error');
  * @typedef {import('../../../base/exchange').BaseOptions} BaseOptions
  */
 
-/**
- * Huobi class for spot wallet API
- */
+/** Huobi spot trading API: fetchMarkets, fetchPrice, fetchCandleHistory, postOrder, cancelOrder, streams. */
 class HuobiSpot extends HuobiBase {
     static DEFAULT_OPTIONS = {
         defaults: {

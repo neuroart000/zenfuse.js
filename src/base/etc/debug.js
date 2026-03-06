@@ -1,11 +1,13 @@
+/**
+ * @file debug.js
+ * @description Debug console proxy; logs only when ZENFUSE_DEBUG=true. Uses Node inspector console.
+ */
 /* eslint-disable no-undef */
 const inspector = require('inspector');
 
 const shouldDebugZenfuse = process.env.ZENFUSE_DEBUG === 'true';
 
-/**
- * @type {ProxyHandler}
- */
+/** Proxy handler that forwards to real console only when ZENFUSE_DEBUG is set. */
 const consoleHandler = {
     apply: (target, _that, args) => {
         if (!shouldDebugZenfuse) return;

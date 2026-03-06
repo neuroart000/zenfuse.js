@@ -1,5 +1,10 @@
 /**
- * @enum {import('../..').timeInterval}
+ * @file metadata.js
+ * @description Maps Zenfuse interval names to Binance API interval strings (e.g. '1m' -> 'm1').
+ */
+/**
+ * Zenfuse interval key -> Binance interval value.
+ * @enum {string}
  */
 const timeIntervals = {
     '1m': 'm1',

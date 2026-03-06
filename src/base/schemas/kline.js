@@ -1,3 +1,8 @@
+/**
+ * @file kline.js
+ * @description Zod schema and type for candlestick/kline data (OHLCV, interval, symbol).
+ */
+
 const { z } = require('zod');
 
 /**

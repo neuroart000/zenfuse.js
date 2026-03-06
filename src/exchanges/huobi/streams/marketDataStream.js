@@ -1,3 +1,7 @@
+/**
+ * @file marketDataStream.js
+ * @description Huobi market data WebSocket: subscribe to depth/trade/candle streams.
+ */
 const debug = require('../../../base/etc/debug');
 const utils = require('../../../base/utils/utils');
 const RuntimeError = require('../../../base/errors/runtime.error');
@@ -5,6 +9,7 @@ const RuntimeError = require('../../../base/errors/runtime.error');
 const HuobiWebsocketBase = require('./websocketBase');
 const { timeIntervals, intervalsMap } = require('../metadata');
 
+/** WebSocket stream for Huobi market data (depth, trade, kline). */
 class MarketDataStream extends HuobiWebsocketBase {
     lastPayloadId = 0;
 

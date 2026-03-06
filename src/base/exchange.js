@@ -1,3 +1,9 @@
+/**
+ * @file exchange.js
+ * @description Base exchange class for Zenfuse. Handles auth, HTTP client setup,
+ * order/candle validation, and order value precision. All exchange implementations extend this.
+ */
+
 const { createSecretKey } = require('crypto');
 
 const got = require('got');
@@ -26,6 +32,10 @@ const KlineSchema = require('./schemas/kline');
 
 const userAgent = `${pkg.name}/${pkg.version} (${pkg.homepage}) node/${process.version} ${process.platform} ${process.arch}`;
 
+/**
+ * Base class for all Zenfuse exchange implementations. Handles auth, HTTP/WS options,
+ * order and candle validation, and order value precision. Subclasses implement exchange-specific APIs.
+ */
 class ExchangeBase {
     /**
      * @type {BaseOptions}
@@ -102,6 +112,11 @@ class ExchangeBase {
         return this;
     }
 
+    /**
+     * Validates order parameters against the Zenfuse order schema (symbol, quantity, type, side, etc.).
+     * @param {object} order - Order object to validate
+     * @throws {ValidationError} When validation fails
+     */
     validateOrderParams(order) {
         const result = this.orderSchema.safeParse(order);
 
@@ -112,6 +127,11 @@ class ExchangeBase {
 
     // TODO: safeValidateOrderParams()
 
+    /**
+     * Validates candle history request params (symbol, interval, optional startTime/endTime).
+     * @param {object} params - Candle history params
+     * @throws {ValidationError} When validation fails
+     */
     validateCandleHistoryParams(params) {
         const paramsSchema = z.object({
             symbol: KlineSchema.shape.symbol,

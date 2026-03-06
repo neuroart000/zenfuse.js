@@ -1,6 +1,11 @@
+/**
+ * @file websocketBase.js
+ * @description Base WebSocket class for Bitglobal: connection, ping, signing.
+ */
 const { EventEmitter } = require('events');
 const { WebSocket } = require('ws');
 
+/** Base for Bitglobal WebSocket streams; handles connection and optional ping interval. */
 class BitglobalWebsocketBase extends EventEmitter {
     static PING_INTERVAL = 15000; // 15 sec
 

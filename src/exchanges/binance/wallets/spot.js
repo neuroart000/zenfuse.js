@@ -1,3 +1,7 @@
+/**
+ * @file spot.js
+ * @description Binance spot wallet: markets, tickers, candles, orders, balances, and streams.
+ */
 const { deprecate } = require('util');
 const mergeObjects = require('deepmerge');
 
@@ -15,9 +19,7 @@ const { timeIntervals } = require('../metadata');
  * @typedef {import('../../../base/schemas/openOrder').PlacedOrder} PostedOrder
  */
 
-/**
- * Binance class for spot wallet API
- */
+/** Binance spot trading API: fetchMarkets, fetchPrice, fetchCandleHistory, postOrder, cancelOrder, streams. */
 class BinanceSpot extends BinanceBase {
     /**
      * List of default options
@@ -313,6 +315,10 @@ class BinanceSpot extends BinanceBase {
         return deletedOrder;
     }
 
+    /**
+     * Fetches current open orders from Binance (raw format; originalPayload attached).
+     * @returns {Promise<object[]>} Open orders with originalPayload
+     */
     async fetchOpenOrders() {
         const response = await this.privateFetch('api/v3/openOrders');
 
@@ -323,6 +329,10 @@ class BinanceSpot extends BinanceBase {
         return response;
     }
 
+    /**
+     * Fetches account balances (ticker, free, used). Only non-zero balances returned.
+     * @returns {Promise<Array<{ticker: string, free: number, used: number}>>}
+     */
     async fetchBalances() {
         const response = await this.privateFetch('api/v3/account');
 
@@ -383,10 +393,12 @@ class BinanceSpot extends BinanceBase {
         return zOrder;
     }
 
+    /** Returns a new account data WebSocket stream (order updates). */
     getAccountDataStream() {
         return new AccountDataStream(this);
     }
 
+    /** Returns a new market data WebSocket stream (prices, candles). */
     getMarketDataStream() {
         return new MarketDataStream(this);
     }

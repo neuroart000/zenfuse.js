@@ -1,6 +1,11 @@
+/**
+ * @file websocketBase.js
+ * @description Base WebSocket class for OKX: connection, ping, signing.
+ */
 const { EventEmitter } = require('events');
 const { WebSocket } = require('ws');
 
+/** Base for OKX WebSocket streams; handles connection and optional ping interval. */
 class OkxWebsocketBase extends EventEmitter {
     static PING_INTERVAL = 15000; // 15 sec
 

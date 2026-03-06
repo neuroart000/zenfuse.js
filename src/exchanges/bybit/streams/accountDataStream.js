@@ -1,3 +1,7 @@
+/**
+ * @file accountDataStream.js
+ * @description Bybit account data WebSocket: listen key, order updates, revalidation.
+ */
 const WebSocket = require('ws');
 const ExchangeWebsocketBase = require('./websocketBase');
 
@@ -5,6 +9,7 @@ const listenKeySymbol = Symbol('listenKey');
 const validUntilSymbol = Symbol('validUntil');
 const intervalSymbol = Symbol('interval');
 
+/** WebSocket stream for Bybit account events (order updates). Manages listen key and revalidation. */
 class AccountDataStream extends ExchangeWebsocketBase {
     /**
      * Time interval when zenfuse should revalidate listen key

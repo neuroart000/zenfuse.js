@@ -1,9 +1,11 @@
+/**
+ * @file api.error.js
+ * @description Maps Binance API error codes to Zenfuse error codes. @see https://binance-docs.github.io/apidocs/spot/en/#error-codes
+ */
 const ExchangeBaseException = require('../../../base/errors/exchange.error');
 const utils = require('../../../base/utils/utils');
 
-/**
- * @see https://binance-docs.github.io/apidocs/spot/en/#error-codes
- */
+/** Binance API error; maps response codes to zenfuse error codes and attaches original response. */
 class BinanceApiException extends ExchangeBaseException {
     static codesMap = new Map([
         [-1022, 'INVALID_CREDENTIALS'],

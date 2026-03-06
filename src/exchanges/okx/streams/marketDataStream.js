@@ -1,3 +1,7 @@
+/**
+ * @file marketDataStream.js
+ * @description OKX market data WebSocket: subscribe to tickers, candles, etc.
+ */
 const utils = require('../../../base/utils/utils');
 
 const OkxWebsocketBase = require('./websocketBase');
@@ -11,6 +15,7 @@ const { timeIntervals } = require('../metadata');
  * @param {WebsocketEvent} event
  */
 
+/** WebSocket stream for OKX market data (tickers, klines). */
 class MarketDataStream extends OkxWebsocketBase {
     /**
      * @returns {this}

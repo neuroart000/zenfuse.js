@@ -1,5 +1,10 @@
 /**
- * @enum {import('../..').timeInterval}
+ * @file metadata.js
+ * @description Maps Zenfuse interval names to OKX API interval strings (e.g. '1m' -> 'candle1m').
+ */
+/**
+ * Zenfuse interval key -> OKX channel/interval value (null where not supported).
+ * @enum {string|null}
  */
 const timeIntervals = {
     '1m': 'candle1m',

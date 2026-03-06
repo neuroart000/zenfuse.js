@@ -1,3 +1,7 @@
+/**
+ * @file spot.js
+ * @description Bybit spot wallet: markets, tickers, candles, orders, balances, and streams.
+ */
 const { deprecate } = require('util');
 const mergeObjects = require('deepmerge');
 
@@ -15,9 +19,7 @@ const { timeIntervals } = require('../metadata');
  * @typedef {import('../../../base/schemas/openOrder').PlacedOrder} PostedOrder
  */
 
-/**
- * Bybit class for spot wallet API
- */
+/** Bybit spot trading API: fetchMarkets, fetchPrice, fetchCandleHistory, postOrder, cancelOrder, streams. */
 class BybitSpot extends BybitBase {
     /**
      * List of default options

@@ -1,5 +1,11 @@
+/**
+ * @file utils.js
+ * @description Shared utilities: link original payload to objects, interval-to-seconds, HMAC signing, pipe.
+ */
+
 const { createHmac } = require('crypto');
 
+/** Attaches the raw exchange payload to an object as non-enumerable `originalPayload`. */
 const linkOriginalPayload = (object, originalPayload) => {
     Object.defineProperty(object, 'originalPayload', {
         value: originalPayload,
@@ -9,6 +15,7 @@ const linkOriginalPayload = (object, originalPayload) => {
     });
 };
 
+/** Converts a Zenfuse interval string (e.g. '1m', '1h') to seconds. */
 const timeIntervalToSeconds = (interval) => {
     const INTERVAL_TABLE = {
         '1m': 60,
@@ -37,7 +44,7 @@ const timeIntervalToSeconds = (interval) => {
     return seconds;
 };
 
-// TODO: Refactor this
+/** Builds HMAC-SHA256 signature from timestamp, method, path, and optional body (used by OKX-style APIs). */
 const createHmacSignatureDefault = (
     { ts, method, path, body = '' },
     key,

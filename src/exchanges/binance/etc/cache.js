@@ -1,5 +1,10 @@
+/**
+ * @file cache.js
+ * @description Binance-specific cache: exchange info, parsed symbols, precision, and open orders.
+ */
 const BaseGlobalCache = require('../../../base/etc/cache');
 
+/** Cache for Binance exchange info (symbols, precision) and local open-orders cache. */
 class BinanceCache extends BaseGlobalCache {
     static ORDERS_CACHE_LENGTH = 10_000;
 
@@ -21,8 +26,8 @@ class BinanceCache extends BaseGlobalCache {
         this.updateSelfIfRequired();
     }
 
+    /** Triggers cache refresh from exchange if expired and no update is in progress. */
     updateSelfIfRequired() {
-        // If cache updating in progress
         if (this.globalCache.updatingPromise) return;
 
         if (this.isExpired) {

@@ -1,3 +1,9 @@
+/**
+ * @file spot.js
+ * @description Bitglobal spot wallet: markets, tickers, candles, orders, balances, and streams.
+ * @deprecated Not working by now due to exchange update
+ * @see https://support.bithumb.pro/hc/en-us/articles/21874365451289-Announcement-on-BitGlobal-Platform-Upgrade
+ */
 const { deprecate } = require('util');
 
 const BitglobalBase = require('../base');
@@ -13,12 +19,7 @@ const { timeIntervals } = require('../metadata');
  * @typedef {import('../../../base/exchange').BaseOptions} BaseOptions
  */
 
-/**
- * Bitglobal class for spot wallet API
- *
- * @deprecated Not working by now due to exchange update
- * @see https://support.bithumb.pro/hc/en-us/articles/21874365451289-Announcement-on-BitGlobal-Platform-Upgrade
- */
+/** Bitglobal spot trading API. Currently deprecated due to exchange platform upgrade. */
 class BitglobalSpot extends BitglobalBase {
     static DEFAULT_OPTIONS = {
         defaults: {

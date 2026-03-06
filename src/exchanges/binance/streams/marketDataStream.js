@@ -1,8 +1,13 @@
+/**
+ * @file marketDataStream.js
+ * @description Binance market data WebSocket: subscribe to price/candle streams, request/response queue.
+ */
 const debug = require('../../../base/etc/debug');
 const RuntimeError = require('../../../base/errors/runtime.error');
 
 const BinanceWebsocketBase = require('./websocketBase');
 
+/** WebSocket stream for Binance market data (ticker price, klines). Emits 'newPrice', 'candle', 'payload'. */
 class MarketDataStream extends BinanceWebsocketBase {
     lastPayloadId = 0;
 
@@ -61,12 +66,18 @@ class MarketDataStream extends BinanceWebsocketBase {
         return this;
     }
 
+    /**
+     * Subscribes to a channel (e.g. price or candle for a symbol/interval).
+     * @param {{ channel: string, symbol: string, interval?: string }} event - Subscription event
+     * @returns {Promise<this>}
+     */
     async subscribeTo(event) {
         return await this.editSubscription(event, 'subscribe');
     }
 
     /**
-     * @param {string|WebsocketEvent} event
+     * Unsubscribes from a channel.
+     * @param {string|WebsocketEvent} event - Same shape as subscribeTo
      */
     async unsubscribeFrom(event) {
         return await this.editSubscription(event, 'unsubscribe');

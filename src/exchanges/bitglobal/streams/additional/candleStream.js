@@ -1,13 +1,15 @@
+/**
+ * @file candleStream.js
+ * @description Builds candlestick stream for Bitglobal from trade data (exchange has no native kline stream).
+ * **NOTE:** Only one stream should be registered on instance.
+ */
 const RuntimeError = require('../../../../base/errors/runtime.error');
 const utils = require('../../../../base/utils/utils');
 const MarketDataStream = require('../marketDataStream');
 
 /**
- * Creates candlestick stream for Bitglobal, witch based only on trades.
- *
- * **NOTE:** Only one stream should be registered on instance
- *
- * **DEV:** This class exists only for exchanges which does not supports kline streams natively
+ * Candlestick stream built from trades. Used when the exchange does not support kline streams natively.
+ * **DEV:** This class exists only for exchanges which do not support kline streams natively.
  */
 class BitglobalCandleStream {
     /**

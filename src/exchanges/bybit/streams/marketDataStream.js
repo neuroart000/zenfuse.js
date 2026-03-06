@@ -1,8 +1,13 @@
+/**
+ * @file marketDataStream.js
+ * @description Bybit market data WebSocket: subscribe to price/candle streams.
+ */
 const debug = require('../../../base/etc/debug');
 const RuntimeError = require('../../../base/errors/runtime.error');
 
 const BybitWebsocketBase = require('./websocketBase');
 
+/** WebSocket stream for Bybit market data (ticker, klines). */
 class MarketDataStream extends BybitWebsocketBase {
     lastPayloadId = 0;
 

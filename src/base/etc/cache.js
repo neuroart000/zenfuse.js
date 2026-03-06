@@ -1,6 +1,9 @@
 /**
- * This is global
+ * @file cache.js
+ * @description Base class for exchange-specific global caches (symbols, precision, etc.). Uses a global Symbol per namespace.
  */
+
+/** Global cache shared across Zenfuse instances; tracks last update for expiry. */
 class BaseGlobalCache {
     static VALID_TIME = 21_000_000; // 6 hours
 
@@ -77,6 +80,7 @@ class BaseGlobalCache {
         return namespaceInstance;
     }
 
+    /** True if cache has not been updated within VALID_TIME (e.g. 6 hours). */
     get isExpired() {
         return (
             Date.now() - this.globalCache.lastUpdateTimestamp >

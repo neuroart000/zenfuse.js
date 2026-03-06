@@ -1,5 +1,10 @@
+/**
+ * @file cache.js
+ * @description Bybit-specific cache: exchange info, parsed symbols, precision, open orders.
+ */
 const BaseGlobalCache = require('../../../base/etc/cache');
 
+/** Cache for Bybit exchange info (symbols, precision) and local open-orders cache. */
 class BybitCache extends BaseGlobalCache {
     static ORDERS_CACHE_LENGTH = 10_000;
 

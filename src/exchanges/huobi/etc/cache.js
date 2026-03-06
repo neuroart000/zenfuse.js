@@ -1,5 +1,10 @@
+/**
+ * @file cache.js
+ * @description Huobi-specific cache: symbol settings, parsed symbols, precision, open orders.
+ */
 const BaseGlobalCache = require('../../../base/etc/cache');
 
+/** Cache for Huobi exchange info (symbols, precision) and local open-orders cache. */
 class HuobiCache extends BaseGlobalCache {
     /**
      * @typedef {import('../base')} HuobiBase

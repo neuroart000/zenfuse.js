@@ -1,9 +1,14 @@
+/**
+ * @file cache.js
+ * @description Bitglobal-specific cache: spot config, parsed symbols, precision, open orders.
+ */
 const BaseGlobalCache = require('../../../base/etc/cache');
 
 /**
  * @typedef {import('../../../base/schemas/openOrder').PlacedOrder} PlacedOrder
  */
 
+/** Cache for Bitglobal exchange info (symbols, precision) and local open-orders cache. */
 class BitglobalCache extends BaseGlobalCache {
     /**
      * @typedef {import('../base')} BitglobalBase

@@ -1,3 +1,7 @@
+/**
+ * @file base.js
+ * @description Bybit base class: HTTP client, auth, request signing, order/cache/symbol handling.
+ */
 const { HTTPError } = require('got');
 const mergeObjects = require('deepmerge');
 const { createHmac } = require('crypto');
@@ -9,9 +13,8 @@ const RuntimeError = require('../../base/errors/runtime.error');
 const UserError = require('../../base/errors/user.error');
 
 /**
- * Bybit base class for method which included in any wallet type
- *
- * **DEV:** Any class what extends ExchangeBase should have same public interface
+ * Bybit base class for methods shared by all wallet types.
+ * **DEV:** Any class that extends ExchangeBase should expose the same public interface.
  */
 class BybitBase extends ExchangeBase {
     /**

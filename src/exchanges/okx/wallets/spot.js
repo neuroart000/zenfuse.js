@@ -1,3 +1,7 @@
+/**
+ * @file spot.js
+ * @description OKX spot wallet: markets, tickers, candles, orders, balances, and streams.
+ */
 const { deprecate } = require('util');
 
 const OkxBase = require('../base');
@@ -13,9 +17,7 @@ const ZenfuseRuntimeError = require('../../../base/errors/runtime.error');
  * @typedef {import('../../../base/exchange').BaseOptions} BaseOptions
  */
 
-/**
- * OKX class for spot wallet API
- */
+/** OKX spot trading API: fetchMarkets, fetchPrice, fetchCandleHistory, postOrder, cancelOrder, streams. */
 class OkxSpot extends OkxBase {
     static DEFAULT_OPTIONS = {
         defaults: {

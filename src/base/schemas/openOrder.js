@@ -1,3 +1,8 @@
+/**
+ * @file openOrder.js
+ * @description Zod schema and type for a placed/open order returned by exchanges.
+ */
+
 const { z } = require('zod');
 
 /**

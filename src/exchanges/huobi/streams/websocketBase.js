@@ -1,8 +1,13 @@
+/**
+ * @file websocketBase.js
+ * @description Base WebSocket class for Huobi: connection, gunzip, message handling.
+ */
 const { EventEmitter } = require('events');
 const { WebSocket } = require('ws');
 const { gunzip } = require('zlib');
 // const ZenfuseRuntimeError = require('../../../base/errors/runtime.error');
 
+/** Base for Huobi WebSocket streams; handles connection and gunzip of messages. */
 class HuobiWebsocketBase extends EventEmitter {
     /**
      * @param {import('../base')} baseInstance

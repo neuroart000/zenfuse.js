@@ -1,5 +1,10 @@
 /**
- * @enum {import('../..').timeInterval}
+ * @file metadata.js
+ * @description Maps Zenfuse interval names to Huobi API interval strings; intervalsMap is reverse mapping.
+ */
+/**
+ * Zenfuse interval key -> Huobi interval value (null where not supported).
+ * @enum {string|null}
  */
 const timeIntervals = {
     '1m': '1min',

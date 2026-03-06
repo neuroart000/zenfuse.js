@@ -1,3 +1,7 @@
+/**
+ * @file accountDataStream.js
+ * @description Binance account data WebSocket: listen key, order updates, revalidation interval.
+ */
 const WebSocket = require('ws');
 const ExchangeWebsocketBase = require('./websocketBase');
 
@@ -5,6 +9,7 @@ const listenKeySymbol = Symbol('listenKey');
 const validUntilSymbol = Symbol('validUntil');
 const intervalSymbol = Symbol('interval');
 
+/** WebSocket stream for Binance account events (e.g. order updates). Manages listen key and revalidation. */
 class AccountDataStream extends ExchangeWebsocketBase {
     /**
      * Time interval when zenfuse should revalidate listen key
@@ -27,8 +32,8 @@ class AccountDataStream extends ExchangeWebsocketBase {
     }
 
     /**
-     *
-     * @returns {this}
+     * Opens the account stream: fetches listen key, connects WebSocket, starts revalidation timer.
+     * @returns {Promise<this>}
      */
     async open() {
         const listenKey = await this.fetchListenKey();
@@ -45,7 +50,7 @@ class AccountDataStream extends ExchangeWebsocketBase {
     }
 
     /**
-     *
+     * Closes the WebSocket and stops the listen-key revalidation interval.
      * @returns {this}
      */
     close() {
@@ -133,6 +138,7 @@ class AccountDataStream extends ExchangeWebsocketBase {
         this.emit('payload', payload);
     }
 
+    /** Parses executionReport payload and emits 'orderUpdate' with Zenfuse order shape. */
     emitOrderUpdateEvent(payload) {
         const order = this.transformWebsocketOrder(payload);
         this.emit('orderUpdate', order);

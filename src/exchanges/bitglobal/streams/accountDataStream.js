@@ -1,8 +1,13 @@
+/**
+ * @file accountDataStream.js
+ * @description Bitglobal account data WebSocket: auth, order updates.
+ */
 const { createHmac } = require('crypto');
 
 const utils = require('../../../base/utils/utils');
 const BitglobalWebsocketBase = require('./websocketBase');
 
+/** WebSocket stream for Bitglobal account events (order updates); requires auth. */
 class AccountDataStream extends BitglobalWebsocketBase {
     /**
      * @type {import('ws').WebSocket}

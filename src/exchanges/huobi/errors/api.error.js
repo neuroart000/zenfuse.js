@@ -1,5 +1,10 @@
+/**
+ * @file api.error.js
+ * @description Huobi API error; attaches response and optional HTTP error.
+ */
 const ZenfuseBaseError = require('../../../base/errors/base.error');
 
+/** Huobi API error with err-msg and optional HTTP error reference. */
 class HuobiApiError extends ZenfuseBaseError {
     /**
      * @param {*} res

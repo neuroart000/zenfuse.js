@@ -1,9 +1,14 @@
+/**
+ * @file marketDataStream.js
+ * @description Bitglobal market data WebSocket: tickers, trades, and candle streams (via CandleStream).
+ */
 const debug = require('../../../base/etc/debug');
 const utils = require('../../../base/utils/utils');
 
 const BitglobalWebsocketBase = require('./websocketBase');
 const CandleStream = require('./additional/candleStream');
 
+/** WebSocket stream for Bitglobal market data; candle streams are built from trades via CandleStream. */
 class MarketDataStream extends BitglobalWebsocketBase {
     /**
      * @type {Map<WebsocketEvent, CandleStream>}

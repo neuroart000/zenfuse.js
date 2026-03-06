@@ -1,7 +1,10 @@
 /**
- * Zenfuse -> Bitglobal intervals
- *
- * @enum {import('../..').timeInterval}
+ * @file metadata.js
+ * @description Maps Zenfuse interval names to Bitglobal API interval strings (e.g. '1m' -> 'm1').
+ */
+/**
+ * Zenfuse interval key -> Bitglobal interval value.
+ * @enum {string}
  */
 const timeIntervals = {
     '1m': 'm1',

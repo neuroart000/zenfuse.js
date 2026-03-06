@@ -1,5 +1,11 @@
+/**
+ * @file user.error.js
+ * @description User-facing errors (auth, validation, unsupported feature, precision).
+ */
+
 const ZenfuseBaseError = require('./base.error');
 
+/** Error thrown for user/config issues: not authenticated, validation failed, precision, etc. */
 class ZenfuseUserError extends ZenfuseBaseError {
     /**
      * Descriptions by error code

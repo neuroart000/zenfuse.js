@@ -1,7 +1,12 @@
+/**
+ * @file api.error.js
+ * @description Maps Bitglobal API error codes to Zenfuse error codes.
+ */
 const { HTTPError } = require('got');
 const ExchangeBaseException = require('../../../base/errors/exchange.error');
 const utils = require('../../../base/utils/utils');
 
+/** Bitglobal API error; maps response codes to zenfuse error codes. */
 class BitglobalApiError extends ExchangeBaseException {
     static codesMap = new Map([
         ['9000', 'INVALID_CREDENTIALS'],

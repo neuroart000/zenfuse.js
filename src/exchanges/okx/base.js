@@ -1,3 +1,7 @@
+/**
+ * @file base.js
+ * @description OKX base class: HTTP client, auth (key + passphrase), request signing, order transformation.
+ */
 const { HTTPError } = require('got');
 const mergeObjects = require('deepmerge');
 
@@ -8,9 +12,8 @@ const { createHmacSignatureDefault } = require('../../base/utils/utils');
 const UserError = require('../../base/errors/user.error');
 
 /**
- * Okx base class for method which included in any wallet type
- *
- * **DEV:** Any class what extends ExchangeBase should have same public interface
+ * OKX base class for methods shared by all wallet types.
+ * **DEV:** Any class that extends ExchangeBase should expose the same public interface.
  */
 class OkxBase extends ExchangeBase {
     /**

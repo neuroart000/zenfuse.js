@@ -1,3 +1,9 @@
+/**
+ * @file index.cjs
+ * @description Main CommonJS entry point for the Zenfuse crypto trading library.
+ * Exports exchange clients, error codes, config, and shared type definitions.
+ */
+
 const Binance = require('./exchanges/binance');
 const Bitglobal = require('./exchanges/bitglobal');
 const Huobi = require('./exchanges/huobi');
@@ -5,7 +11,8 @@ const OKX = require('./exchanges/okx');
 const ExchangeBaseException = require('./base/errors/exchange.error');
 
 /**
- * @enum
+ * Zenfuse library exports: exchange wallet enums, error codes, and config.
+ * @namespace
  */
 module.exports = {
     Binance,

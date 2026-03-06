@@ -1,6 +1,11 @@
+/**
+ * @file websocketBase.js
+ * @description Base WebSocket class for Bybit: connection and message handling.
+ */
 const { EventEmitter } = require('events');
 const { WebSocket } = require('ws');
 
+/** Base for Bybit WebSocket streams. */
 class ExchangeWebsocketBase extends EventEmitter {
     /**
      * @param {import('../base')} baseInstance

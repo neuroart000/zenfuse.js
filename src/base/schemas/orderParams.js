@@ -1,3 +1,8 @@
+/**
+ * @file orderParams.js
+ * @description Zod schema and type for Zenfuse order parameters (symbol, quantity, type, side, etc.).
+ */
+
 const { z } = require('zod');
 
 /**

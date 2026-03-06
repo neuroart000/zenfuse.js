@@ -1,6 +1,11 @@
+/**
+ * @file accountDataStream.js
+ * @description Huobi account data WebSocket: auth, order updates.
+ */
 const HuobiWebsocketBase = require('./websocketBase');
 const { createHmac } = require('crypto');
 
+/** WebSocket stream for Huobi account events (e.g. order updates); requires auth. */
 class AccountDataStream extends HuobiWebsocketBase {
     /**
      * Time interval when zenfuse should revalidate listen key

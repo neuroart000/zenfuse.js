@@ -1,9 +1,11 @@
+/**
+ * @file api.error.js
+ * @description Maps Bybit API error codes to Zenfuse error codes.
+ */
 const ExchangeBaseException = require('../../../base/errors/exchange.error');
 const utils = require('../../../base/utils/utils');
 
-/**
- * @see https://binance-docs.github.io/apidocs/spot/en/#error-codes
- */
+/** Bybit API error; maps response codes to zenfuse error codes and attaches original response. */
 class BybitApiException extends ExchangeBaseException {
     static codesMap = new Map([
         [-1022, 'INVALID_CREDENTIALS'],

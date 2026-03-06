@@ -1,15 +1,25 @@
+/**
+ * @file websocketBase.js
+ * @description Base WebSocket class for Binance: connection, order/candlestick transformation.
+ */
 const { EventEmitter } = require('events');
 const { WebSocket } = require('ws');
 
+/** Base for Binance WebSocket streams; creates connection and transforms WS order/candle payloads. */
 class ExchangeWebsocketBase extends EventEmitter {
     /**
-     * @param {import('../base')} baseInstance
+     * @param {import('../base')} baseInstance - Binance base instance (for parseBinanceSymbol, etc.)
      */
     constructor(baseInstance) {
         super();
         this.base = baseInstance;
     }
 
+    /**
+     * Opens a WebSocket to the given path (relative to wsClientOptions.prefixUrl).
+     * @param {string} path - Path (e.g. 'ws' or '/ws/<listenKey>')
+     * @returns {Promise<import('ws').WebSocket>}
+     */
     getSocketConnection(path) {
         const { wsClientOptions } = this.base.options;
 

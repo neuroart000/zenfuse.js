@@ -1,3 +1,7 @@
+/**
+ * @file base.js
+ * @description Bitglobal base class: HTTP client, auth, request signing, order/cache handling.
+ */
 const { HTTPError } = require('got');
 const mergeObjects = require('deepmerge');
 
@@ -8,7 +12,8 @@ const ZenfuseUserError = require('../../base/errors/user.error');
 const { createHmac } = require('crypto');
 
 /**
- * Bitglobal base class for method which included in any wallet type
+ * Bitglobal base class for methods shared by all wallet types.
+ * **DEV:** Any class that extends ExchangeBase should expose the same public interface.
  */
 class BitglobalBase extends ExchangeBase {
     /**

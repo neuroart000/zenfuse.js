@@ -1,6 +1,11 @@
+/**
+ * @file accountDataStream.js
+ * @description OKX account data WebSocket: private channel, order/balance updates.
+ */
 const utils = require('../../../base/utils/utils');
 const OkxWebsocketBase = require('./websocketBase');
 
+/** WebSocket stream for OKX account events (order updates, balance); requires auth. */
 class AccountDataStream extends OkxWebsocketBase {
     /**
      * @type {import('ws').WebSocket}
