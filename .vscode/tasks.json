@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LoadConfFile",
+      "type": "shell",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "windows": {
+        "command": "node \".\\tests\\test.js\"",
+      },
+      "osx": {
+        "command": "node ./tests/test.js"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated",
+        "close": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

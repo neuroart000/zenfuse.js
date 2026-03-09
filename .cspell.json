@@ -1,0 +1,20 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "dictionaries": ["project-dictionary"],
+    "dictionaryDefinitions": [
+        { "name": "project-dictionary", "path": "./.cspell-dictionary.txt" }
+    ],
+    "ignorePaths": [
+        "www/bun.lockb",
+        "lib/node_modules/**",
+        "lib/types/**",
+        "lib/tests/exchanges/*/mocks/static/*",
+        "lib/tests/exchanges/*/scope.js",
+        "**/*.spec.js",
+        ".git/**"
+    ],
+    "useGitignore": true,
+    "dots": true,
+    "noProgress": true
+}

@@ -1,0 +1,47 @@
+{
+    "name": "zenfuse-docs",
+    "version": "0.13.3",
+    "private": true,
+    "scripts": {
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start",
+        "build": "docusaurus build",
+        "swizzle": "docusaurus swizzle",
+        "clear": "docusaurus clear",
+        "serve": "docusaurus serve",
+        "write-translations": "docusaurus write-translations",
+        "write-heading-ids": "docusaurus write-heading-ids"
+    },
+    "dependencies": {
+        "@docusaurus/core": "latest",
+        "@docusaurus/plugin-sitemap": "latest",
+        "@docusaurus/preset-classic": "latest",
+        "@docusaurus/theme-search-algolia": "latest",
+        "@mdx-js/react": "^1.6.22",
+        "clsx": "^1.2.1",
+        "prism-react-renderer": "^1.3.5",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@docusaurus/eslint-plugin": "^2.2.0",
+        "@docusaurus/module-type-aliases": "latest",
+        "eslint": "^8.26.0",
+        "eslint-plugin-react": "^7.31.10"
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "engines": {
+        "node": ">=16.14"
+    }
+}

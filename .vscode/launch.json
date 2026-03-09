@@ -1,0 +1,118 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Binance E2E Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:e2e", "binance"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Bitglobal E2E Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:e2e", "bitglobal"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "OKX E2E Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:e2e", "okx"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Huobi E2E Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:e2e", "huobi"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Full Integration Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:integration"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Binance Integration Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:integration", "binance"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Bitglobal Integration Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:integration", "bitglobal"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "OKX Integration Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:integration", "okx"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Huobi Integration Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:integration", "huobi"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        },
+        {
+            "name": "Unit Tests",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "test:unit"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**/*"],
+            "type": "node",
+            "env": {
+                "NODE_DEBUG": "zenfuse*"
+            }
+        }
+    ]
+}
