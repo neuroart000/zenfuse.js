@@ -8,10 +8,10 @@
         "runOn": "folderOpen"
       },
       "windows": {
-        "command": "node \".\\tests\\test.js\"",
+        "command": "node \".\\main.js\"",
       },
       "osx": {
-        "command": "node ./tests/test.js"
+        "command": "node ./main.js"
       },
       "presentation": {
         "reveal": "never",
